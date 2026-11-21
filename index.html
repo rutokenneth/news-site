@@ -1,1 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Dispatch — Online News</title>
+  <style>
+    /* Reset & Base Typography */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      background-color: #f7f7f5;
+      color: #111111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      padding: 16px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border: 1px solid #dddddd;
+      border-radius: 6px;
+      padding: 24px 32px;
+    }
+
+    /* Masthead & Navigation */
+    header {
+      text-align: center;
+      border-bottom: 2px solid #111111;
+      padding-bottom: 16px;
+      margin-bottom: 28px;
+    }
+
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: #555555;
+      border-bottom: 1px solid #dddddd;
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+
+    h1.masthead {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.5rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #444444;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    nav {
+      border-top: 1px solid #dddddd;
+      padding-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #111111;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      color: #991b1b;
+      text-decoration: underline;
+    }
+
+    /* Articles & Typography */
+    article {
+      padding-bottom: 32px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    article:last-of-type {
+      border-bottom: none;
+      margin-bottom: 16px;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #991b1b;
+      margin-bottom: 6px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.75rem;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+
+    .byline {
+      font-size: 0.85rem;
+      color: #555555;
+      margin-bottom: 16px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 1rem;
+      color: #222222;
+    }
+
+    a {
+      color: #991b1b;
+    }
+
+    /* Captioned Figures & Media */
+    figure {
+      margin: 18px 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      border: 1px solid #e5e5e5;
+    }
+
+    figcaption {
+      font-size: 0.84rem;
+      color: #555555;
+      margin-top: 6px;
+      padding-left: 10px;
+      border-left: 2px solid #991b1b;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .media-box {
+      background-color: #f4f4f2;
+      border: 1px solid #dddddd;
+      border-radius: 4px;
+      padding: 14px;
+      margin: 16px 0;
+    }
+
+    .media-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    video, audio {
+      width: 100%;
+      border-radius: 4px;
+      display: block;
+    }
+
+    blockquote {
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #111111;
+      border-left: 3px solid #111111;
+      padding: 10px 16px;
+      margin: 18px 0;
+      background-color: #fafafa;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 2px solid #111111;
+      padding-top: 18px;
+      font-size: 0.85rem;
+      color: #555555;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 18px; }
+      h1.masthead { font-size: 1.9rem; }
+      .meta-bar { flex-direction: column; gap: 4px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="top">
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+      <div class="meta-bar">
+        <span>Saturday, November 21, 2026</span>
+        <span>Nairobi Edition • Independent Digital Press</span>
+      </div>
+      <h1 class="masthead">THE DAILY DISPATCH</h1>
+      <p class="tagline">Clear, concise reporting on technology, science, culture, and travel.</p>
+      <nav aria-label="Main Sections">
+        <a href="#news">Tech &amp; Science</a>
+        <a href="#interview">Interview</a>
+        <a href="#travel">Travel</a>
+        <a href="#commentary">Commentary</a>
+        <a href="https://www.reuters.com/world/africa/" target="_blank" rel="noopener noreferrer">Reuters Africa &nearr;</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ITEM 1: NEWS (TECHNOLOGY & ENERGY) — TEXT + 2 CAPTIONED PHOTOS -->
+      <article id="news">
+        <span class="kicker">News • Technology &amp; Energy (Text &amp; Photo Report)</span>
+        <h2>Geothermal Energy Powers New East African Cloud Hubs</h2>
+        <p class="byline">By David Kamau • Reporting from Naivasha &amp; Nairobi</p>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80" alt="Server racks inside a modern data center" />
+          <figcaption>High-density server corridors near Nairobi run on continuous renewable baseload electricity from the Rift Valley. (Photo: Unsplash / Taylor Vick)</figcaption>
+        </figure>
+
+        <p>
+          Beneath the volcanic ridges of Hell’s Gate in Naivasha, pressurized geothermal steam is increasingly powering artificial intelligence and cloud computing servers across East Africa. Over the past year, regional operators have launched over 140 megawatts of new zero-carbon data center capacity along the Naivasha–Nairobi corridor.
+        </p>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=900&q=80" alt="High-voltage renewable energy power lines" />
+          <figcaption>High-voltage transmission lines carry clean geothermal electricity from Olkaria to industrial technology parks. (Photo: Unsplash / Matthew Henry)</figcaption>
+        </figure>
+
+        <p>
+          Unlike solar or wind facilities that depend on weather patterns, geothermal plants generate steady power 24 hours a day. Paired with four high-capacity subsea fiber cables landing in Mombasa, Kenya is rapidly becoming a low-latency digital hub for the continent.
+        </p>
+        <p>
+          <strong>Related Links:</strong>
+          <a href="https://www.irena.org/Energy-Transition/Technology/Geothermal-energy" target="_blank" rel="noopener noreferrer">IRENA Geothermal Energy Overview</a> |
+          <a href="https://www.reuters.com/technology/" target="_blank" rel="noopener noreferrer">Reuters Technology News</a>
+        </p>
+      </article>
+
+      <!-- ITEM 2: NEWS (SCIENCE & ENVIRONMENT) — AUDIO-VISUAL VIDEO DISPATCH -->
+      <article id="science-video">
+        <span class="kicker">News • Science &amp; Environment (Audio-Visual Video Dispatch)</span>
+        <h2>Solar Drones Monitor Lake Naivasha Water Quality</h2>
+        <p class="byline">By Amina Hassan • Environmental Video Unit</p>
+
+        <div class="media-box">
+          <span class="media-label">Watch Field Video Dispatch (HD Video + Narration):</span>
+          <video controls preload="metadata" poster="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4" type="video/mp4" />
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+
+        <p>
+          Marine biologists and local lakeside cooperatives at Lake Naivasha are deploying solar-charged mapping drones at dawn to spot invasive water hyacinth mats before they block vital fish breeding grounds. Coordinates are sent directly to shore teams, who harvest the plants and convert them into eco-friendly cooking briquettes.
+        </p>
+        <p>
+          <strong>Further Reading:</strong>
+          <a href="https://www.unep.org/" target="_blank" rel="noopener noreferrer">United Nations Environment Programme (UNEP)</a>
+        </p>
+      </article>
+
+      <!-- ITEM 3: EXCLUSIVE INTERVIEW — AUDIO PODCAST + TEXT Q&A + CAPTIONED PHOTO -->
+      <article id="interview">
+        <span class="kicker">Interview • Architecture &amp; Design (Audio Podcast + Text Q&amp;A)</span>
+        <h2>Building With Earth: A Conversation With Architect Wanjiku Mwangi</h2>
+        <p class="byline">Hosted by Brian Ochieng • Nairobi Studio</p>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80" alt="Portrait of architect Wanjiku Mwangi" />
+          <figcaption>Nairobi-based architect Wanjiku Mwangi advocates for passive cooling and compressed earth construction. (Photo: Unsplash / Christina Wocintech)</figcaption>
+        </figure>
+
+        <div class="media-box">
+          <span class="media-label">Listen to the Audio Interview (MP3):</span>
+          <audio controls preload="metadata">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <p><strong>The Daily Dispatch:</strong> Why do you urge East African cities to move away from glass-and-steel towers?</p>
+        <p><strong>Wanjiku Mwangi:</strong> Glass skyscrapers trap equatorial heat and require heavy air conditioning. Traditional Swahili courtyards and compressed interlocking earth blocks breathe naturally, lowering indoor temperatures by up to five degrees Celsius without extra electricity.</p>
+        <p>
+          <strong>Explore More:</strong>
+          <a href="https://www.archdaily.com/" target="_blank" rel="noopener noreferrer">ArchDaily Contemporary Architecture</a>
+        </p>
+      </article>
+
+      <!-- ITEM 4: TRAVEL FEATURE — MULTIMEDIA COMBO (AUDIO + TEXT + CAPTIONED GALLERY) -->
+      <article id="travel">
+        <span class="kicker">Travel Feature • Multimedia (Field Audio + Narrative + Captioned Photos)</span>
+        <h2>Slow Travel in the Cloud Forests of Taita Hills</h2>
+        <p class="byline">By Grace Wambui • Travel Correspondent</p>
+
+        <div class="media-box">
+          <span class="media-label">Ambient Forest Soundscape — Recorded at Ngangao Cloud Forest (Audio):</span>
+          <audio controls preload="metadata">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg" />
+            Your browser does not support HTML5 audio.
+          </audio>
+        </div>
+
+        <p>
+          Rising abruptly from the red plains of Tsavo East, southern Kenya’s Taita Hills offer cool mountain mist, ancient walking trails, and community-led homestays. Accessible via the Madaraka Express train to Voi, the ridge trails wind through indigenous cloud forests home to rare endemic birds and panoramic views toward Mount Kilimanjaro.
+        </p>
+
+        <div class="photo-grid">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=600&q=80" alt="Sunlight filtering through tall trees in a misty forest" />
+            <figcaption>Morning mist filters through indigenous canopy trees in Ngangao Forest. (Photo: Unsplash / Lukasz Szmigiel)</figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Green mountain ridges overlooking plains" />
+            <figcaption>View from Vuria Peak overlooking the surrounding valleys and plains. (Photo: Unsplash / Kalen Emsley)</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          <strong>Plan Your Trip:</strong>
+          <a href="https://magicalkenya.com/" target="_blank" rel="noopener noreferrer">Magical Kenya Official Travel Guide</a> |
+          <a href="https://whc.unesco.org/" target="_blank" rel="noopener noreferrer">UNESCO World Heritage Centre</a>
+        </p>
+      </article>
+
+      <!-- ITEM 5: COMMENTARY / OPINION — EDITORIAL TEXT + CAPTIONED PHOTO + PULL QUOTE -->
+      <article id="commentary">
+        <span class="kicker">Commentary • Opinion &amp; Analysis</span>
+        <h2>Why Open-Source African Language AI Matters Now</h2>
+        <p class="byline">By Prof. Peter Mutua • Contributing Columnist</p>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=900&q=80" alt="Code and digital data visualization" />
+          <figcaption>Open-source datasets in Kiswahili, Kikuyu, and Dholuo help ensure equitable access to digital tools. (Photo: Unsplash / Markus Spiske)</figcaption>
+        </figure>
+
+        <blockquote>
+          “If artificial intelligence only understands a handful of global languages, millions of farmers, students, and clinic workers are left behind.”
+        </blockquote>
+
+        <p>
+          Mobile technology has transformed banking and agriculture across East Africa, yet most commercial voice assistants still struggle with African languages. Supporting open-source research collectives that build transparent, locally curated speech and text datasets is essential so healthcare and agricultural tools work in the languages people actually speak every day.
+        </p>
+        <p>
+          <strong>Organizations Mentioned:</strong>
+          <a href="https://www.masakhane.io/" target="_blank" rel="noopener noreferrer">Masakhane African NLP Research</a> |
+          <a href="https://foundation.mozilla.org/" target="_blank" rel="noopener noreferrer">Mozilla Foundation</a>
+        </p>
+      </article>
+    </main>
+
+    <!-- MINIMALIST FOOTER -->
+    <footer>
+      <span>&copy; 2026 The Daily Dispatch • Nairobi, Kenya</span>
+      <ul>
+        <li><a href="#top">Back to Top &uarr;</a></li>
+        <li><a href="https://www.spj.org/ethicscode.asp" target="_blank" rel="noopener noreferrer">Ethics Code</a></li>
+        <li><a href="https://mediacouncil.or.ke/" target="_blank" rel="noopener noreferrer">Media Council of Kenya</a></li>
+      </ul>
+    </footer>
+
+  </div>
+</body>
+</html>
